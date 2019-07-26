@@ -45,15 +45,8 @@ enum ErrorMessageCode: String {
 
 enum API {
     
-    static let baseURL                          = "http://liveresultat.orientering.se/api.php?"
-    static let pathGetCompetitions              = "method=getcompetitions"
-    static let pathGetCompetitionInfo           = "method=getcompetitioninfo&comp=%@"
-    static let pathGetLastPassings              = "method=getlastpassings&comp=%@"
-    static let pathGetClasses                   = "method=getclasses&comp=%@"
-    static let pathGetClassResults              = "method=getclassresults&comp=%@&class=%@"
-    static let pathGetClubResults               = "method=getclubresults&comp=%@&club=%@"
-    static let pathComponentLastHash            = "&lastHash=%@"
-    static let pathComponentUnformattedTimes    = "&unformattedTimes=false"
+    static let baseURL                          = "https://pokeapi.co/api/v2/"
+    static let pathGetPokemon                   = "pokemon/%@"
     
 //    static func pathGetLastPassings(forCompetition id: Int) -> String {
 //        return String(format: API.pathGetLastPassings, String(id)).appending(API.appendLastHash())
