@@ -23,6 +23,7 @@ final class Network {
     }
     
     func request<T: Codable>(type: T.Type, request: NetworkRequest) -> Observable<T> {
+        
         manager.adapter = NetworkHeadersAdapter(request: request)
         
         return manager.rx.responseJSON(request.method, request.url, parameters: request.parameters, encoding: request.encoding())
@@ -71,6 +72,19 @@ final class Network {
                 try self.showError(response: response, data: data)
                 return Data()
         }
+    }
+    
+    func requestServerData<T: Codable>(type: T.Type, request: NetworkRequest) -> Observable<T> {
+        manager.adapter = NetworkHeadersAdapter(request: request)
+        
+        return manager.rx.responseData(request.method, request.url, parameters: request.parameters, encoding: request.encoding())
+            .map { response, data -> Any? in
+                guard response.statusCode >= Network.statusCodeMinError else { return data }
+                
+                try self.showError(response: response, data: data)
+                return nil
+            }
+            .mapObject(type: type, url: request.url)
     }
     
     private func showError(response: HTTPURLResponse, data: Any?) throws {
