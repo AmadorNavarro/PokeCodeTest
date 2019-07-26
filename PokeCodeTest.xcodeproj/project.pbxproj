@@ -28,7 +28,6 @@
 		3D6CB4BD22EA3B210039A140 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48922EA3B210039A140 /* BaseViewController.swift */; };
 		3D6CB4BE22EA3B210039A140 /* BaseComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48A22EA3B210039A140 /* BaseComponentView.swift */; };
 		3D6CB4BF22EA3B210039A140 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48B22EA3B210039A140 /* BaseViewModel.swift */; };
-		3D6CB4C022EA3B210039A140 /* PullToRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48C22EA3B210039A140 /* PullToRefreshViewController.swift */; };
 		3D6CB4C122EA3B210039A140 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48E22EA3B210039A140 /* Wireframe.swift */; };
 		3D6CB4C222EA3B210039A140 /* BaseViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB48F22EA3B210039A140 /* BaseViewControllerDelegate.swift */; };
 		3D6CB4C322EA3B210039A140 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49022EA3B210039A140 /* Reusable.swift */; };
@@ -59,6 +58,13 @@
 		3D6CB4DC22EA3B210039A140 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB4AC22EA3B210039A140 /* Theme.swift */; };
 		3D6CB4DD22EA3B210039A140 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB4AE22EA3B210039A140 /* Constants.swift */; };
 		3D6CB4E322EA3EC70039A140 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB4E222EA3EC70039A140 /* NetworkError.swift */; };
+		3DE3193B22EB6043006A0CB1 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3193A22EB6043006A0CB1 /* NetworkConstants.swift */; };
+		3DE3194222EB62B8006A0CB1 /* UpperBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3193F22EB62B8006A0CB1 /* UpperBannerView.xib */; };
+		3DE3194322EB62B8006A0CB1 /* UpperBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3194022EB62B8006A0CB1 /* UpperBannerView.swift */; };
+		3DE3194422EB62B8006A0CB1 /* UpperBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3194122EB62B8006A0CB1 /* UpperBannerViewModel.swift */; };
+		3DE3194922EB634A006A0CB1 /* BackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE3194622EB634A006A0CB1 /* BackgroundView.xib */; };
+		3DE3194A22EB634A006A0CB1 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3194722EB634A006A0CB1 /* BackgroundView.swift */; };
+		3DE3194B22EB634A006A0CB1 /* BackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3194822EB634A006A0CB1 /* BackgroundViewModel.swift */; };
 		6D51403BF20689DB06FA4FC7 /* Pods_PokeCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E825019626A6EE71A798707 /* Pods_PokeCodeTest.framework */; };
 		A165C80A6262EDBB10290DA4 /* Pods_PokeCodeTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A097A792CF9733E757F87E /* Pods_PokeCodeTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -100,7 +106,6 @@
 		3D6CB48922EA3B210039A140 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3D6CB48A22EA3B210039A140 /* BaseComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseComponentView.swift; sourceTree = "<group>"; };
 		3D6CB48B22EA3B210039A140 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		3D6CB48C22EA3B210039A140 /* PullToRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshViewController.swift; sourceTree = "<group>"; };
 		3D6CB48E22EA3B210039A140 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		3D6CB48F22EA3B210039A140 /* BaseViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerDelegate.swift; sourceTree = "<group>"; };
 		3D6CB49022EA3B210039A140 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -131,6 +136,13 @@
 		3D6CB4AC22EA3B210039A140 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		3D6CB4AE22EA3B210039A140 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3D6CB4E222EA3EC70039A140 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3DE3193A22EB6043006A0CB1 /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		3DE3193F22EB62B8006A0CB1 /* UpperBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpperBannerView.xib; sourceTree = "<group>"; };
+		3DE3194022EB62B8006A0CB1 /* UpperBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpperBannerView.swift; sourceTree = "<group>"; };
+		3DE3194122EB62B8006A0CB1 /* UpperBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpperBannerViewModel.swift; sourceTree = "<group>"; };
+		3DE3194622EB634A006A0CB1 /* BackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundView.xib; sourceTree = "<group>"; };
+		3DE3194722EB634A006A0CB1 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		3DE3194822EB634A006A0CB1 /* BackgroundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewModel.swift; sourceTree = "<group>"; };
 		78A9B5B966F1CC31A64338BF /* Pods-PokeCodeTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCodeTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCodeTestUITests/Pods-PokeCodeTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86A097A792CF9733E757F87E /* Pods_PokeCodeTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCodeTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5CC1314CCF260D8C883B3B /* Pods-PokeCodeTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCodeTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCodeTestUITests/Pods-PokeCodeTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +249,7 @@
 		3D6CB47422EA3A080039A140 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3DE3193C22EB6288006A0CB1 /* UI */,
 				3D6CB47722EA3A260039A140 /* Supporting Files */,
 			);
 			path = App;
@@ -301,7 +314,6 @@
 				3D6CB48922EA3B210039A140 /* BaseViewController.swift */,
 				3D6CB48A22EA3B210039A140 /* BaseComponentView.swift */,
 				3D6CB48B22EA3B210039A140 /* BaseViewModel.swift */,
-				3D6CB48C22EA3B210039A140 /* PullToRefreshViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -381,9 +393,47 @@
 		3D6CB4DF22EA3E3F0039A140 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3DE3193A22EB6043006A0CB1 /* NetworkConstants.swift */,
 				3D6CB4E222EA3EC70039A140 /* NetworkError.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		3DE3193C22EB6288006A0CB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3193D22EB6292006A0CB1 /* ReusableViews */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3DE3193D22EB6292006A0CB1 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3194522EB634A006A0CB1 /* Background View */,
+				3DE3193E22EB62B8006A0CB1 /* UpperBannerView */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		3DE3193E22EB62B8006A0CB1 /* UpperBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3194022EB62B8006A0CB1 /* UpperBannerView.swift */,
+				3DE3194122EB62B8006A0CB1 /* UpperBannerViewModel.swift */,
+				3DE3193F22EB62B8006A0CB1 /* UpperBannerView.xib */,
+			);
+			path = UpperBannerView;
+			sourceTree = "<group>";
+		};
+		3DE3194522EB634A006A0CB1 /* Background View */ = {
+			isa = PBXGroup;
+			children = (
+				3DE3194722EB634A006A0CB1 /* BackgroundView.swift */,
+				3DE3194822EB634A006A0CB1 /* BackgroundViewModel.swift */,
+				3DE3194622EB634A006A0CB1 /* BackgroundView.xib */,
+			);
+			path = "Background View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,11 +531,13 @@
 				3D6CB4B422EA3B210039A140 /* Roboto-ThinItalic.ttf in Resources */,
 				3D6CB4B622EA3B210039A140 /* Roboto-LightItalic.ttf in Resources */,
 				3D6CB4B822EA3B210039A140 /* Roboto-BlackItalic.ttf in Resources */,
+				3DE3194222EB62B8006A0CB1 /* UpperBannerView.xib in Resources */,
 				3D6CB4B122EA3B210039A140 /* Roboto-Light.ttf in Resources */,
 				3D6CB4B722EA3B210039A140 /* Roboto-Italic.ttf in Resources */,
 				3D6CB4B322EA3B210039A140 /* Roboto-MediumItalic.ttf in Resources */,
 				3D6CB4BB22EA3B210039A140 /* Roboto-Black.ttf in Resources */,
 				3D6CB4BA22EA3B210039A140 /* Roboto-Thin.ttf in Resources */,
+				3DE3194922EB634A006A0CB1 /* BackgroundView.xib in Resources */,
 				3D6CB4B022EA3B210039A140 /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +699,8 @@
 				3D6CB4BD22EA3B210039A140 /* BaseViewController.swift in Sources */,
 				3D6CB4CA22EA3B210039A140 /* Error+Utils.swift in Sources */,
 				3D6CB4C722EA3B210039A140 /* String+Localized.swift in Sources */,
+				3DE3194A22EB634A006A0CB1 /* BackgroundView.swift in Sources */,
+				3DE3193B22EB6043006A0CB1 /* NetworkConstants.swift in Sources */,
 				3D6CB45422EA38D50039A140 /* AppDelegate.swift in Sources */,
 				3D6CB4C322EA3B210039A140 /* Reusable.swift in Sources */,
 				3D6CB4D022EA3B210039A140 /* UILabel+Utilities.swift in Sources */,
@@ -655,6 +709,7 @@
 				3D6CB4C822EA3B210039A140 /* UIImageView+Maps.swift in Sources */,
 				3D6CB4E322EA3EC70039A140 /* NetworkError.swift in Sources */,
 				3D6CB4D122EA3B210039A140 /* UIButton+Utilities.swift in Sources */,
+				3DE3194422EB62B8006A0CB1 /* UpperBannerViewModel.swift in Sources */,
 				3D6CB4D422EA3B210039A140 /* Stylized.swift in Sources */,
 				3D6CB4C122EA3B210039A140 /* Wireframe.swift in Sources */,
 				3D6CB4C222EA3B210039A140 /* BaseViewControllerDelegate.swift in Sources */,
@@ -668,8 +723,9 @@
 				3D6CB4DC22EA3B210039A140 /* Theme.swift in Sources */,
 				3D6CB4CD22EA3B210039A140 /* UIColor+Colorize.swift in Sources */,
 				3D6CB4AF22EA3B210039A140 /* JSONLogger.swift in Sources */,
+				3DE3194322EB62B8006A0CB1 /* UpperBannerView.swift in Sources */,
 				3D6CB4BF22EA3B210039A140 /* BaseViewModel.swift in Sources */,
-				3D6CB4C022EA3B210039A140 /* PullToRefreshViewController.swift in Sources */,
+				3DE3194B22EB634A006A0CB1 /* BackgroundViewModel.swift in Sources */,
 				3D6CB4D522EA3B210039A140 /* UIView+ProgressHUD.swift in Sources */,
 				3D6CB4CE22EA3B210039A140 /* Action+Utils.swift in Sources */,
 				3D6CB4D222EA3B210039A140 /* UIViewController+Utils.swift in Sources */,
@@ -828,10 +884,9 @@
 			baseConfigurationReference = C0BCF1D54B0BADAD312D4D18 /* Pods-PokeCodeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6736Y4CV2;
-				INFOPLIST_FILE = PokeCodeTest/Info.plist;
+				INFOPLIST_FILE = "PokeCodeTest/App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -848,10 +903,9 @@
 			baseConfigurationReference = EBF390350684C5A5A8E275EE /* Pods-PokeCodeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6736Y4CV2;
-				INFOPLIST_FILE = PokeCodeTest/Info.plist;
+				INFOPLIST_FILE = "PokeCodeTest/App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

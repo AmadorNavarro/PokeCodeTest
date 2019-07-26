@@ -43,24 +43,27 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Swift.Ne
 extension ObservableType {
     
     public func mapObject<T: Codable>(type: T.Type, url: URLConvertible) -> Observable<T> {
+        
         return flatMap { data -> Observable<T> in
             JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dayTimeToString()) \n - JSON: \(data)\n")
-            let object = JSONDecoder().decode(T.self, from: String(data: data, encoding: .utf8) ?? "")
-            
-            
-            guard let object = Mapper<T>().map(JSONObject: data) else {
+            let response = data as? (HTTPURLResponse, Data)
+            guard let jsonData = response?.1 else {
                 throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"])
             }
+            
+            let object = try JSONDecoder().decode(T.self, from: jsonData)
             return Observable.just(object)
         }
     }
     
-    public func mapArray<T: Mappable>(type: T.Type, url: URLConvertible) -> Observable<[T]> {
+    public func mapArray<T: Codable>(type: T.Type, url: URLConvertible) -> Observable<[T]> {
         return flatMap { data -> Observable<[T]> in
             JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dayTimeToString()) \n - JSONArray: \(data)\n")
-            guard let object = Mapper<T>().mapArray(JSONObject: data) else {
+            let response = data as? (HTTPURLResponse, Data)
+            guard let jsonData = response?.1 else {
                 throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"])
             }
+            let object = try JSONDecoder().decode([T].self, from: jsonData)
             return Observable.just(object)
         }
     }

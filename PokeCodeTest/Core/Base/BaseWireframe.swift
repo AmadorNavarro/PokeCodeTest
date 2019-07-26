@@ -32,33 +32,33 @@ class BaseWireframe {
         }
     }
     
-    func displayCategoryList(forCompetition competition: Competition) {
-        let viewController = CategorySelectorViewController(competition: competition)
-        displayScreenMode(displayMode: .push, viewController: viewController)
-    }
-    
-    func displayResultList(forCompetition competition: Competition, category: Category) {
-        let viewController = RunnerListViewController(competition: competition, category: category)
-        displayScreenMode(displayMode: .push, viewController: viewController)
-    }
-    
-    func displayRunnerDetail(_ runner: ResultModel) {
-        let viewController = RunnerDetailViewController()
-        viewController.viewModel.setup(withRunner: runner)
-        displayScreenMode(displayMode: .push, viewController: viewController)
-    }
-    
-    func displayClubResults(_ competition: Int, clubName: String) {
-        let viewController = ClubListViewController(competition: competition, clubName: clubName)
-        displayScreenMode(displayMode: .push, viewController: viewController)
-    }
-    
-    func popClubListShowingRunnerDetail(_ runner: ResultModel) {
-        guard let navigationController = presenterViewController.navigationController else { return }
-        navigationController.popViewController(animated: true)
-        if let runnerDetailController = navigationController.topViewController as? RunnerDetailViewController {
-            runnerDetailController.viewModel.setup(withRunner: runner)
-        }
-    }
+//    func displayCategoryList(forCompetition competition: Competition) {
+//        let viewController = CategorySelectorViewController(competition: competition)
+//        displayScreenMode(displayMode: .push, viewController: viewController)
+//    }
+//    
+//    func displayResultList(forCompetition competition: Competition, category: Category) {
+//        let viewController = RunnerListViewController(competition: competition, category: category)
+//        displayScreenMode(displayMode: .push, viewController: viewController)
+//    }
+//    
+//    func displayRunnerDetail(_ runner: ResultModel) {
+//        let viewController = RunnerDetailViewController()
+//        viewController.viewModel.setup(withRunner: runner)
+//        displayScreenMode(displayMode: .push, viewController: viewController)
+//    }
+//    
+//    func displayClubResults(_ competition: Int, clubName: String) {
+//        let viewController = ClubListViewController(competition: competition, clubName: clubName)
+//        displayScreenMode(displayMode: .push, viewController: viewController)
+//    }
+//    
+//    func popClubListShowingRunnerDetail(_ runner: ResultModel) {
+//        guard let navigationController = presenterViewController.navigationController else { return }
+//        navigationController.popViewController(animated: true)
+//        if let runnerDetailController = navigationController.topViewController as? RunnerDetailViewController {
+//            runnerDetailController.viewModel.setup(withRunner: runner)
+//        }
+//    }
     
 }

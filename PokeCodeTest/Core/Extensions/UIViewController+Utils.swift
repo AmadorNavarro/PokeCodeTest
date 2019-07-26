@@ -41,14 +41,4 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-//    func launchGoogleMaps(address: String) {
-//        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-//            if let url = URL(string: "comgooglemaps://?q=\(address)&zoom=14&views=traffic") {
-//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//            }
-//        } else {
-//            print("Can't use comgooglemaps://");
-//        }
-//    }
-    
 }

@@ -26,7 +26,10 @@ extension String {
     }
     
     func timeStringToDate() -> Date {
-        let dateFormatter = DateFormatter(withFormat: Constants.timeFormatter, locale: Locale.current.identifier)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = Constants.timeFormatter
+        
         return dateFormatter.date(from: self) ?? Date()
     }
 
