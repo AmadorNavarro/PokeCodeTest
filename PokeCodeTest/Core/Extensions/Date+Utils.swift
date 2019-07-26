@@ -10,9 +10,17 @@ import Foundation
 
 extension Date {
     
-    public func dayTimeToString() -> String {
+    public func dateAndTimeToString() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = Constants.dateAndTimeFormat
+        return dateFormatter.string(from: self)
+    }
+    
+    public func dateToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = Constants.dateFormat
         return dateFormatter.string(from: self)
     }
     

@@ -45,10 +45,10 @@ extension ObservableType {
     public func mapObject<T: Codable>(type: T.Type, url: URLConvertible) -> Observable<T> {
         
         return flatMap { data -> Observable<T> in
-            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dayTimeToString()) \n - JSON: \(data)\n")
+            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dateAndTimeToString()) \n - JSON: \(data)\n")
             let response = data as? (HTTPURLResponse, Data)
             guard let jsonData = response?.1 else {
-                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"])
+                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Object can't decode"])
             }
             
             let object = try JSONDecoder().decode(T.self, from: jsonData)
@@ -58,10 +58,10 @@ extension ObservableType {
     
     public func mapArray<T: Codable>(type: T.Type, url: URLConvertible) -> Observable<[T]> {
         return flatMap { data -> Observable<[T]> in
-            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dayTimeToString()) \n - JSONArray: \(data)\n")
+            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dateAndTimeToString()) \n - JSONArray: \(data)\n")
             let response = data as? (HTTPURLResponse, Data)
             guard let jsonData = response?.1 else {
-                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"])
+                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Object can't decode"])
             }
             let object = try JSONDecoder().decode([T].self, from: jsonData)
             return Observable.just(object)
@@ -71,9 +71,9 @@ extension ObservableType {
     public func mapString(url: URLConvertible) -> Observable<String> {
         return flatMap { plainData -> Observable<String> in
             guard let data = plainData as? Data, let object = String(data: data, encoding: .utf8) else {
-                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"])
+                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Object can't decode"])
             }
-            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dayTimeToString()) \n - String: \(object)\n ")
+            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dateAndTimeToString()) \n - String: \(object)\n ")
             return Observable.just(object)
         }
     }

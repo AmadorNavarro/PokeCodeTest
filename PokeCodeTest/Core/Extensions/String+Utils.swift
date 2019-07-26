@@ -12,7 +12,7 @@ extension String {
     
     func dateStringToTime() -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = Constants.dateFormat
         return dateFormatter.date(from: self) ?? Date()
     }
     
@@ -28,7 +28,7 @@ extension String {
     func timeStringToDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = Constants.timeFormatter
+        dateFormatter.dateFormat = Constants.timeFormat
         
         return dateFormatter.date(from: self) ?? Date()
     }
