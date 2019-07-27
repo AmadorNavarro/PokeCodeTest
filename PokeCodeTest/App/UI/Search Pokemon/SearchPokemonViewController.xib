@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchPokemonViewController" customModule="PokeCodeTest" customModuleProvider="target">
+            <connections>
+                <outlet property="catchButton" destination="hqt-66-WiJ" id="W2F-VZ-0Fg"/>
+                <outlet property="heightLabel" destination="GeV-Pe-heI" id="jiQ-e6-r9l"/>
+                <outlet property="nameLabel" destination="O4m-tZ-Fm4" id="JYb-Wd-I9n"/>
+                <outlet property="pokemonImageView" destination="mA7-xp-eX3" id="KwA-Jg-2RU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightLabel" destination="IRM-Aq-wSl" id="qtY-Y8-ktM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-v9-8gS" userLabel="Background Image">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-HH-A2M" userLabel="Buttons Stack">
+                    <rect key="frame" x="20" y="135.5" width="374" height="177"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqt-66-WiJ" userLabel="Catch Button">
+                            <rect key="frame" x="0.0" y="0.0" width="177" height="177"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="hqt-66-WiJ" secondAttribute="height" multiplier="1:1" id="eEw-iK-sUl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Catch it"/>
+                            <connections>
+                                <action selector="userCatchThePokemon:" destination="-1" eventType="touchUpInside" id="x7G-mW-XKs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HEZ-cI-4Fo" userLabel="Leave Button">
+                            <rect key="frame" x="197" y="0.0" width="177" height="177"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="HEZ-cI-4Fo" secondAttribute="height" multiplier="1:1" id="HVt-Uf-EgQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                            <state key="normal" title="Leave free"/>
+                            <connections>
+                                <action selector="userLeaveThePokemon:" destination="-1" eventType="touchUpInside" id="OCZ-Oj-hJh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="MJ4-c3-hMa"/>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mA7-xp-eX3">
+                    <rect key="frame" x="159" y="576" width="96" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="OOP-Nj-tMA"/>
+                        <constraint firstAttribute="width" secondItem="mA7-xp-eX3" secondAttribute="height" multiplier="1:1" id="poF-zV-TXF"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="OgK-6Y-x3F" userLabel="Pokemon Stack">
+                    <rect key="frame" x="144.5" y="680" width="125" height="53"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4m-tZ-Fm4" userLabel="Name Label">
+                            <rect key="frame" x="40" y="0.0" width="45" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-i4-Bbt">
+                            <rect key="frame" x="0.0" y="32.5" width="125" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-Aq-wSl" userLabel="Weight Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="54" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Height" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeV-Pe-heI" userLabel="Height Label">
+                                    <rect key="frame" x="74" y="0.0" width="51" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="X4c-HH-A2M" firstAttribute="leading" secondItem="cDB-eA-HnD" secondAttribute="leading" constant="20" id="2hC-OK-myp"/>
+                <constraint firstAttribute="bottom" secondItem="YH2-v9-8gS" secondAttribute="bottom" id="38d-kQ-9Tm"/>
+                <constraint firstItem="mA7-xp-eX3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8V2-nE-3cd"/>
+                <constraint firstItem="OgK-6Y-x3F" firstAttribute="top" secondItem="mA7-xp-eX3" secondAttribute="bottom" constant="8" id="96J-7r-FqR"/>
+                <constraint firstAttribute="trailing" secondItem="YH2-v9-8gS" secondAttribute="trailing" id="A3h-2q-Zrv"/>
+                <constraint firstItem="X4c-HH-A2M" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="MV5-2X-HqB"/>
+                <constraint firstItem="cDB-eA-HnD" firstAttribute="trailing" secondItem="X4c-HH-A2M" secondAttribute="trailing" constant="20" id="QEW-Sc-0B7"/>
+                <constraint firstItem="X4c-HH-A2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y86-oT-IZA"/>
+                <constraint firstItem="mA7-xp-eX3" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.5" id="YN5-QV-f44"/>
+                <constraint firstItem="OgK-6Y-x3F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="acY-9x-GFJ"/>
+                <constraint firstItem="YH2-v9-8gS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jc6-TG-dqy"/>
+                <constraint firstItem="YH2-v9-8gS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mxn-Qo-wie"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="cDB-eA-HnD"/>
+            <point key="canvasLocation" x="-41" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de" width="800" height="480"/>
+    </resources>
+</document>

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3D45042F22EC98560000F1BA /* JSONEncoder + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45042E22EC98560000F1BA /* JSONEncoder + Utils.swift */; };
 		3D45043122EC99C10000F1BA /* JSONDecoder + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043022EC99C10000F1BA /* JSONDecoder + Utils.swift */; };
+		3D45043422ECA76F0000F1BA /* PokedexTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043322ECA76F0000F1BA /* PokedexTabBarController.swift */; };
+		3D45043922ECA9DB0000F1BA /* SearchPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043622ECA9DB0000F1BA /* SearchPokemonViewController.swift */; };
+		3D45043A22ECA9DB0000F1BA /* SearchPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043722ECA9DB0000F1BA /* SearchPokemonViewModel.swift */; };
+		3D45043B22ECA9DB0000F1BA /* SearchPokemonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D45043822ECA9DB0000F1BA /* SearchPokemonViewController.xib */; };
 		3D6CB45422EA38D50039A140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB45322EA38D50039A140 /* AppDelegate.swift */; };
 		3D6CB45B22EA38D60039A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CB45A22EA38D60039A140 /* Assets.xcassets */; };
 		3D6CB45E22EA38D60039A140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CB45C22EA38D60039A140 /* LaunchScreen.storyboard */; };
@@ -111,6 +115,10 @@
 		0E825019626A6EE71A798707 /* Pods_PokeCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D45042E22EC98560000F1BA /* JSONEncoder + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder + Utils.swift"; sourceTree = "<group>"; };
 		3D45043022EC99C10000F1BA /* JSONDecoder + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder + Utils.swift"; sourceTree = "<group>"; };
+		3D45043322ECA76F0000F1BA /* PokedexTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTabBarController.swift; sourceTree = "<group>"; };
+		3D45043622ECA9DB0000F1BA /* SearchPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonViewController.swift; sourceTree = "<group>"; };
+		3D45043722ECA9DB0000F1BA /* SearchPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonViewModel.swift; sourceTree = "<group>"; };
+		3D45043822ECA9DB0000F1BA /* SearchPokemonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPokemonViewController.xib; sourceTree = "<group>"; };
 		3D6CB45022EA38D50039A140 /* PokeCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6CB45322EA38D50039A140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6CB45A22EA38D60039A140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +254,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3D45043222ECA74D0000F1BA /* Pokemon Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				3D45043322ECA76F0000F1BA /* PokedexTabBarController.swift */,
+			);
+			path = "Pokemon Tab Bar";
+			sourceTree = "<group>";
+		};
+		3D45043522ECA9AF0000F1BA /* Search Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				3D45043622ECA9DB0000F1BA /* SearchPokemonViewController.swift */,
+				3D45043722ECA9DB0000F1BA /* SearchPokemonViewModel.swift */,
+				3D45043822ECA9DB0000F1BA /* SearchPokemonViewController.xib */,
+			);
+			path = "Search Pokemon";
+			sourceTree = "<group>";
+		};
 		3D6CB44722EA38D50039A140 = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +331,8 @@
 		3D6CB47422EA3A080039A140 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				3DE3197122EB710C006A0CB1 /* Model */,
 				3DE3193C22EB6288006A0CB1 /* UI */,
+				3DE3197122EB710C006A0CB1 /* Model */,
 				3D6CB47722EA3A260039A140 /* Supporting Files */,
 			);
 			path = App;
@@ -474,6 +500,8 @@
 		3DE3193C22EB6288006A0CB1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3D45043522ECA9AF0000F1BA /* Search Pokemon */,
+				3D45043222ECA74D0000F1BA /* Pokemon Tab Bar */,
 				3DE3193D22EB6292006A0CB1 /* ReusableViews */,
 			);
 			path = UI;
@@ -708,6 +736,7 @@
 				3D6CB4B922EA3B210039A140 /* Roboto-Bold.ttf in Resources */,
 				3D6CB4B522EA3B210039A140 /* Roboto-BoldItalic.ttf in Resources */,
 				3D6CB4B222EA3B210039A140 /* Roboto-Regular.ttf in Resources */,
+				3D45043B22ECA9DB0000F1BA /* SearchPokemonViewController.xib in Resources */,
 				3D6CB4B422EA3B210039A140 /* Roboto-ThinItalic.ttf in Resources */,
 				3D6CB4B622EA3B210039A140 /* Roboto-LightItalic.ttf in Resources */,
 				3D6CB4B822EA3B210039A140 /* Roboto-BlackItalic.ttf in Resources */,
@@ -879,6 +908,7 @@
 				3DE3196222EB6FE3006A0CB1 /* PokeapiService.swift in Sources */,
 				3DE3196E22EB70B8006A0CB1 /* PokemonEntity.swift in Sources */,
 				3DE3196D22EB70B8006A0CB1 /* PokemonModelDataMapper.swift in Sources */,
+				3D45043A22ECA9DB0000F1BA /* SearchPokemonViewModel.swift in Sources */,
 				3D6CB4BD22EA3B210039A140 /* BaseViewController.swift in Sources */,
 				3DE3199122EB8518006A0CB1 /* SearchPokemonUseCase.swift in Sources */,
 				3D6CB4CA22EA3B210039A140 /* Error+Utils.swift in Sources */,
@@ -911,7 +941,9 @@
 				3DE3196A22EB70B8006A0CB1 /* PokemonEntityDataMapper.swift in Sources */,
 				3DE3199222EB8518006A0CB1 /* SearchPokemonUseCaseImpl.swift in Sources */,
 				3D6CB4D322EA3B210039A140 /* UITableViewCell+BaseViewModel.swift in Sources */,
+				3D45043422ECA76F0000F1BA /* PokedexTabBarController.swift in Sources */,
 				3D6CB4D622EA3B210039A140 /* UIImage+Utilities.swift in Sources */,
+				3D45043922ECA9DB0000F1BA /* SearchPokemonViewController.swift in Sources */,
 				3DE3197E22EB7975006A0CB1 /* BaseEntityDataMapper.swift in Sources */,
 				3D6CB4C422EA3B210039A140 /* BaseCell.swift in Sources */,
 				3D6CB4D822EA3B210039A140 /* Double+Utils.swift in Sources */,
