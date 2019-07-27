@@ -74,7 +74,7 @@ final class Network {
         }
     }
     
-    func requestServerData<T: Codable>(type: T.Type, request: NetworkRequest) -> Observable<T> {
+    func requestServerData<T: Codable>(type: T.Type, request: NetworkRequest, keyCodableStrategy: KeyCodableStrategy = .camelCase) -> Observable<T> {
         manager.adapter = NetworkHeadersAdapter(request: request)
         
         return manager.rx.responseData(request.method, request.url, parameters: request.parameters, encoding: request.encoding())
@@ -84,7 +84,7 @@ final class Network {
                 try self.showError(response: response, data: data)
                 return nil
             }
-            .mapObject(type: type, url: request.url)
+            .mapData(type: type, url: request.url, keyCodableStrategy: keyCodableStrategy)
     }
     
     private func showError(response: HTTPURLResponse, data: Any?) throws {
