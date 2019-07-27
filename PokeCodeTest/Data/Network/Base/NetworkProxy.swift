@@ -163,5 +163,9 @@ class NetworkProxy {
     internal func processData(networkService: NetworkRequest) -> Single<Data> {
         return Network().requestServerData(request: networkService).asSingle()
     }
+    
+    internal func processData<T: Codable>(type: T.Type, networkService: NetworkRequest, keyCodableStrategy: KeyCodableStrategy = .camelCase) -> Single<T> {
+        return Network().requestServerData(type: type, request: networkService, keyCodableStrategy: keyCodableStrategy).asSingle()
+    }
 
 }

@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        _ = SearchPokemonUseCaseImpl().execute()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe { event in
+                switch event {
+                case .success(let response):
+                    print(response)
+                case .error(let error):
+//                    self.actionError.execute(error.apiError())
+                    print(error)
+                }
+//                self.showLoadingAction.execute(.gone)
+            }.disposed(by: disposeBag)
         
         
         return true

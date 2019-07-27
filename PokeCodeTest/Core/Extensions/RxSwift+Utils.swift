@@ -10,6 +10,10 @@ import Foundation
 import RxSwift
 import Alamofire
 
+public enum KeyCodableStrategy {
+    case camelCase, snake
+}
+
 extension PrimitiveSequence where Trait == SingleTrait {
     
     public func asMaybe() -> PrimitiveSequence<MaybeTrait, Element> {
@@ -73,6 +77,17 @@ extension ObservableType {
             guard let data = plainData as? Data, let object = String(data: data, encoding: .utf8) else {
                 throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Object can't decode"])
             }
+            JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dateAndTimeToString()) \n - String: \(object)\n ")
+            return Observable.just(object)
+        }
+    }
+    
+    public func mapData<T: Codable>(type: T.Type, url: URLConvertible, keyCodableStrategy: KeyCodableStrategy = .camelCase) -> Observable<T> {
+        return flatMap { data -> Observable<T> in
+            guard let data = data as? Data else {
+                throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Object can't decode"])
+            }
+            let object = try JSONDecoder(keyStrategy: keyCodableStrategy).decode(T.self, from: data)
             JSONLogger.setJSON("\nRESPONSE -> \n - URL: \(url) \n - TIME: \(Date().dateAndTimeToString()) \n - String: \(object)\n ")
             return Observable.just(object)
         }
