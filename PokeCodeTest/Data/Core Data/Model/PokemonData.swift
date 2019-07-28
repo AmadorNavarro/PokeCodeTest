@@ -19,4 +19,8 @@ open class PokemonData: _PokemonData {
         }
     }
     
+    func types() -> [PokemonTypeData] {
+        return pokemonTypesData.allObjects as? [PokemonTypeData] ?? []
+    }
+    
 }
