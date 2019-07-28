@@ -29,7 +29,10 @@ final class PokedexTabBarController: UITabBarController {
     }
     
     func configure() {
+        let searchPokemon = SearchPokemonViewController()
+        searchPokemon.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
+        viewControllers = [searchPokemon]
     }
     
 }

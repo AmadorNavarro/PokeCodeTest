@@ -1,6 +1,6 @@
 //
 //  BaseViewController.swift
-//  O-Results
+//  PokeCodeTest
 //
 //  Created by Amador Navarro on 11/03/2018.
 //  Copyright © 2018 AmadorNavarro. All rights reserved.
@@ -168,7 +168,7 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, BaseViewControlle
         if self.viewModel.isNetworkAvailable() {
             self.showAlert(error: error)
         } else {
-            self.showAlertController(title: "OResults_error_message_unexcepted_error_title".localized, message: "OResults_error_message_unexcepted_error_message".localized, buttonAction: notNetworkAvailableAction)
+            self.showAlertController(title: "PokeCodeTest_error_message_unexcepted_error_title".localized, message: "PokeCodeTest_error_message_unexcepted_error_message".localized, buttonAction: notNetworkAvailableAction)
         }
     }
     
@@ -226,7 +226,7 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, BaseViewControlle
             let barHeight = navigationController?.navigationBar.frame.maxY ?? 0
             let frame = CGRect(x: 0, y: -UpperBannerView.preferredHeight, width: UIScreen.main.bounds.width, height: UpperBannerView.preferredHeight + barHeight)
             let bannerView = UpperBannerView(frame: frame)
-            bannerView.viewModel.setUp(text: "OResults_reachability_error_message_text".localized, textStyle: .textB16White, backgroundColor: .red)
+            bannerView.viewModel.setUp(text: "PokeCodeTest_reachability_error_message_text".localized, textStyle: .textB16White, backgroundColor: .red)
             self.bannerView = bannerView
             return bannerView
         }

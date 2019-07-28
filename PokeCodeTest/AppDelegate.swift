@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        let tabBar = UITba
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = PokedexTabBarController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

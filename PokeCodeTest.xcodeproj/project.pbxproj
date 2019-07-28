@@ -44,7 +44,6 @@
 		3D6CB4C822EA3B210039A140 /* UIImageView+Maps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49622EA3B210039A140 /* UIImageView+Maps.swift */; };
 		3D6CB4C922EA3B210039A140 /* UITableViewCell+Reusable.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49722EA3B210039A140 /* UITableViewCell+Reusable.swift .swift */; };
 		3D6CB4CA22EA3B210039A140 /* Error+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49822EA3B210039A140 /* Error+Utils.swift */; };
-		3D6CB4CB22EA3B210039A140 /* UIViewController+CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49922EA3B210039A140 /* UIViewController+CLLocation.swift */; };
 		3D6CB4CC22EA3B210039A140 /* UITableView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49A22EA3B210039A140 /* UITableView+Utilities.swift */; };
 		3D6CB4CD22EA3B210039A140 /* UIColor+Colorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49B22EA3B210039A140 /* UIColor+Colorize.swift */; };
 		3D6CB4CE22EA3B210039A140 /* Action+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB49C22EA3B210039A140 /* Action+Utils.swift */; };
@@ -154,7 +153,6 @@
 		3D6CB49622EA3B210039A140 /* UIImageView+Maps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Maps.swift"; sourceTree = "<group>"; };
 		3D6CB49722EA3B210039A140 /* UITableViewCell+Reusable.swift .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Reusable.swift .swift"; sourceTree = "<group>"; };
 		3D6CB49822EA3B210039A140 /* Error+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Utils.swift"; sourceTree = "<group>"; };
-		3D6CB49922EA3B210039A140 /* UIViewController+CLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CLLocation.swift"; sourceTree = "<group>"; };
 		3D6CB49A22EA3B210039A140 /* UITableView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utilities.swift"; sourceTree = "<group>"; };
 		3D6CB49B22EA3B210039A140 /* UIColor+Colorize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colorize.swift"; sourceTree = "<group>"; };
 		3D6CB49C22EA3B210039A140 /* Action+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Utils.swift"; sourceTree = "<group>"; };
@@ -426,7 +424,6 @@
 				3D6CB49622EA3B210039A140 /* UIImageView+Maps.swift */,
 				3D6CB49722EA3B210039A140 /* UITableViewCell+Reusable.swift .swift */,
 				3D6CB49822EA3B210039A140 /* Error+Utils.swift */,
-				3D6CB49922EA3B210039A140 /* UIViewController+CLLocation.swift */,
 				3D6CB49A22EA3B210039A140 /* UITableView+Utilities.swift */,
 				3D6CB49B22EA3B210039A140 /* UIColor+Colorize.swift */,
 				3D6CB49C22EA3B210039A140 /* Action+Utils.swift */,
@@ -803,6 +800,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PokeCodeTestUITests/Pods-PokeCodeTestUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -814,6 +812,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -853,6 +852,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PokeCodeTest/Pods-PokeCodeTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -864,6 +864,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -899,7 +900,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6CB4D922EA3B210039A140 /* String+Utils.swift in Sources */,
-				3D6CB4CB22EA3B210039A140 /* UIViewController+CLLocation.swift in Sources */,
 				3D6CB4C522EA3B210039A140 /* UINavigationBar+Utilities.swift in Sources */,
 				3D6CB4DB22EA3B210039A140 /* Translator.swift in Sources */,
 				3D6CB4BC22EA3B210039A140 /* BaseWireframe.swift in Sources */,
