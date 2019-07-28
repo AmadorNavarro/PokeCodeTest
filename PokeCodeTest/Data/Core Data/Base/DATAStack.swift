@@ -1,3 +1,8 @@
+/*
+ * MOGENERATOR command
+ * mogenerator -m PokeCodeTest/Data/Core\ Data/Model/PokeCodeTest.xcdatamodeld --human-dir PokeCodeTest/Data/Core\ Data/Model --machine-dir PokeCodeTest/Data/Core\ Data/Model/Machine\ Files --swift --template-var arc=true
+ */
+
 import Foundation
 import CoreData
 
