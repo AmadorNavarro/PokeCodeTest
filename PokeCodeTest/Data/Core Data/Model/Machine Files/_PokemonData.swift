@@ -54,7 +54,7 @@ open class _PokemonData: NSManagedObject {
     var height: Int32 // Optional scalars not supported
 
     @NSManaged open
-    var id: String?
+    var id: Int16 // Optional scalars not supported
 
     @NSManaged open
     var name: String?
