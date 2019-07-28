@@ -1,6 +1,6 @@
 //
 //  Network.swift
-//  O-Results
+//  PokeCodeTest
 //
 //  Created by Amador Navarro on 11/03/2018.
 //  Copyright © 2018 AmadorNavarro. All rights reserved.
@@ -88,10 +88,8 @@ final class Network {
     }
     
     private func showError(response: HTTPURLResponse, data: Any?) throws {
-//        guard let data = data, let object: Codable = Mapper<APINetworkError>().map(JSONObject: data) ?? Mapper<Operation>().map(JSONString: String(describing: data)) else { return }
-        
         print("\n**ERROR RESPONSE -> \n - URL: \(String(describing: response.url?.absoluteString))\n - StatusCode: \(response.statusCode)\n - TIME: \(Date().dateAndTimeToString())\n - Response: \(String(describing: data)) ")
-//        throw object.error()
+        throw APINetworkError(code: 404, message: "PokeCodeTest_not_found_error".localized, raw: "")
     }
     
 }

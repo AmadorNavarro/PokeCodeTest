@@ -15,8 +15,8 @@ final class PokemonModelDataMapper: BaseModelDataMapper<PokemonModel, Pokemon>, 
         if let entity = entity {
             domain.name = entity.name
             domain.spritePath = entity.spritePath
-            domain.weight = String(entity.weight)
-            domain.height = String(entity.height)
+            domain.weight = String(entity.weight / 10) + "Kg."  // The pokemon weight is received in hectograms
+            domain.height = String(entity.height / 10) + "m."   // The pokemon height is received in decimeters
             domain.baseExperience = String(entity.baseExperience)
             domain.types = PokemonTypeModelDataMapper().transform(entityList: entity.types)
             domain.catchDate = entity.catchDate.dateAndTimeToString()

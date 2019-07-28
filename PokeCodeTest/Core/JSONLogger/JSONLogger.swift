@@ -1,6 +1,6 @@
 //
 //  JSONLogger.swift
-//  O-Results
+//  PokeCodeTest
 //
 //  Created by Amador Navarro on 29/06/2019.
 //  Copyright © 2019 AmadorNavarro. All rights reserved.

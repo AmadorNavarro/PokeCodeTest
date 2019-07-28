@@ -1,6 +1,6 @@
 //
 //  UILabel+Utilities.swift
-//  O-Results
+//  PokeCodeTest
 //
 //  Created by Amador Navarro Lucas on 09/12/2018.
 //  Copyright © 2018 AmadorNavarro. All rights reserved.

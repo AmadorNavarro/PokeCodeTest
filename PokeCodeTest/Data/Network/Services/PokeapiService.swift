@@ -13,7 +13,7 @@ final class PokeapiService: NetworkProxy {
 
     func searchNewPokemon() -> Single<PokemonEntity> {
         let serviceRequest = NetworkRequest()
-        serviceRequest.path = String(format: API.pathGetPokemon, arguments: ["321"])//String(Int.pokemonID())])
+        serviceRequest.path = String(format: API.pathGetPokemon, arguments: [String(Int.pokemonID())])
         
         return processData(type: PokemonEntity.self, networkService: serviceRequest, keyCodableStrategy: .snake)
     }

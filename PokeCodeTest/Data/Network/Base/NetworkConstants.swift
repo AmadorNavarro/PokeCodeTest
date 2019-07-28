@@ -1,6 +1,6 @@
 //
 //  NetworkConstants.swift
-//  O-Results
+//  PokeCodeTest
 //
 //  Created by Amador Navarro on 11/03/2018.
 //  Copyright © 2018 AmadorNavarro. All rights reserved.
@@ -16,7 +16,7 @@ public class APINetworkError: Error {
     var raw: String = ""
     
     public static func unknown() -> APINetworkError {
-        return APINetworkError(code: 0, message: "OResults_error_message_unexcepted_error_message".localized, raw: ErrorMessageCode.error.messageText)
+        return APINetworkError(code: 0, message: "PokeCodeTest_error_message_unexcepted_error_message".localized, raw: ErrorMessageCode.error.messageText)
     }
     
     init(code: Int = 0, message: String, raw: String) {

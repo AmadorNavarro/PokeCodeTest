@@ -12,6 +12,7 @@ def PokeCodeTestSharedPods
   pod 'Action', '4.0.0'
   pod 'RxAlamofire', '5.0.0'
   pod 'MBProgressHUD'
+  pod 'Kingfisher'
 end
 
 target 'PokeCodeTest' do
