@@ -19,6 +19,11 @@
 // BACKPACK VIEW
 "PokeCodeTest_backpackController_title" = "Backpack";
 
+// DETAIL VIEW
+"PokeCodeTest_pokemon_detail_view_weight_title" = "Weight:";
+"PokeCodeTest_pokemon_detail_view_height_title" = "Height:";
+"PokeCodeTest_pokemon_detail_view_base_experience_title" = "Base Experience:";
+
 // ERROR MESSAGES
 "PokeCodeTest_error_message_unexcepted_error_message" = "An unexcepted error has occurred. Please try again.";
 "PokeCodeTest_error_message_unexcepted_error_title" = "Atention";
