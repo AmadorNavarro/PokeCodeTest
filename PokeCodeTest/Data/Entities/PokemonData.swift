@@ -13,6 +13,7 @@ open class PokemonData: _PokemonData {
         weight = Int32(entity.weight)
         height = Int32(entity.height)
         catchDate = entity.catchDate
+        order = Int32(entity.order)
         
         for type in entity.types {
             addPokemonTypesDataObject(PokemonTypeData(entity: type, context: context))

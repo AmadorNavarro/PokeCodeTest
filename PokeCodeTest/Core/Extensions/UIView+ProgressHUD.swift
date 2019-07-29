@@ -37,7 +37,7 @@ extension UIView {
         loadingNotification.mode = .indeterminate
         loadingNotification.backgroundView.color = ThemeColor.lightGray.color().withAlphaComponent(0.7)
         loadingNotification.bezelView.color = ThemeColor.ultraLightGray.color()
-        loadingNotification.label.text = "OResult_spinner_loading_text".localized
+        loadingNotification.label.text = "PokeCodeTest_spinner_loading_text".localized
         progressHUDCounter += 1
     }
     

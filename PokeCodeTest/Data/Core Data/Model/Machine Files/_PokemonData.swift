@@ -10,6 +10,7 @@ public enum PokemonDataAttributes: String {
     case height = "height"
     case id = "id"
     case name = "name"
+    case order = "order"
     case spritePath = "spritePath"
     case weight = "weight"
 }
@@ -62,6 +63,9 @@ open class _PokemonData: NSManagedObject {
 
     @NSManaged open
     var name: String?
+
+    @NSManaged open
+    var order: Int32 // Optional scalars not supported
 
     @NSManaged open
     var spritePath: String?

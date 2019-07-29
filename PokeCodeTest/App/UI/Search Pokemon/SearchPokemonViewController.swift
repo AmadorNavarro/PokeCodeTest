@@ -17,23 +17,18 @@ final class SearchPokemonViewController: BaseViewController<SearchPokemonViewMod
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var catchButton: UIButton!
+    @IBOutlet weak var leaveButton: UIButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if viewModel.pokemon == nil {
+        if viewModel.pokemon.value == nil {
             viewModel.requestNewPokemon()
         }
     }
     
     override func createViewModel() -> SearchPokemonViewModel {
         return SearchPokemonViewModel()
-    }
-    
-    override func setupLayout() {
-        super.setupLayout()
-        
-//        catchButton.addTarget(self, action: #selector(userCatchThePokemon(_:)), for: .touchUpInside)
     }
     
     override func setupRx() {
@@ -51,10 +46,27 @@ final class SearchPokemonViewController: BaseViewController<SearchPokemonViewMod
             let url = URL(string: path)
             self?.pokemonImageView.kf.setImage(with: url)
             }.disposed(by: disposeBag)
+        
+        viewModel.addBackpack.onExecute { [weak self] in
+            if let tabBar = self?.tabBarController as? PokedexTabBarController {
+                tabBar.addBackpackItem()
+            }
+            }.disposed(by: disposeBag)
+        
+        viewModel.pokemon.asObservable().bind { [weak self] pokemon in
+            guard let `self` = self else { return }
+            if pokemon == nil {
+                self.leaveButton.isHidden = true
+                self.catchButton.setTitle("PokeCodeTest_search_view_catchbutton_search_title".localized, for: .normal)
+            } else {
+                self.leaveButton.isHidden = false
+                self.catchButton.setTitle("PokeCodeTest_search_view_catchbutton_catch_title".localized, for: .normal)
+            }
+        }.disposed(by: disposeBag)
     }
 
     @IBAction func userCatchThePokemon(_ sender: Any) {
-        if viewModel.pokemon != nil {
+        if viewModel.pokemon.value != nil {
             viewModel.catchCurrentPokemon()
         } else {
             viewModel.requestNewPokemon()
@@ -62,7 +74,18 @@ final class SearchPokemonViewController: BaseViewController<SearchPokemonViewMod
     }
     
     @IBAction func userLeaveThePokemon(_ sender: Any) {
-        print("leave")
+        self.viewModel.clearPokemon()
+    }
+    
+    override func manageActionError(error: APINetworkError, notNetworkAvailableAction: UIAlertAction? = nil) {
+        switch error.code {
+        case 404:
+            showAlertController(message: "PokeCodeTest_search_view_pokemon_not_found".localized)
+        case 408:
+            showAlertController(message: error.message)
+        default:
+            break
+        }
     }
     
 }
