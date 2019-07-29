@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 final class PokedexTabBarController: UITabBarController {
+    
+    let recoveryBackPackUseCase = RecoveryBackpackPokemonsUseCaseImpl()
+    var disposeBag = DisposeBag()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -29,10 +33,56 @@ final class PokedexTabBarController: UITabBarController {
     }
     
     func configure() {
+        tabBar.isTranslucent = false
+        
+        addSearchPokemonItem()
+        checkBackpackPokemons()
+    }
+    
+    func addSearchPokemonItem() {
         let searchPokemon = SearchPokemonViewController()
         searchPokemon.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
         viewControllers = [searchPokemon]
+    }
+    
+    func addBackpackItem() {
+        if tabBar.items?.count == 1 {
+            let backpackViewController = BackpackViewController()
+            backpackViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+            
+            let navigationController = UINavigationController(rootViewController: backpackViewController)
+            navigationController.navigationBar.isTranslucent = true
+            navigationController.navigationBar.barTintColor = .red
+            navigationController.navigationBar.tintColor = .white
+            navigationController.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+            viewControllers?.append(navigationController)
+        }
+    }
+    
+    func checkBackpackPokemons() {
+        _ = recoveryBackPackUseCase.execute()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] event in
+                switch event {
+                case .success(let response):
+                    if !response.isEmpty {
+                        self?.addBackpackItem()
+                    }
+                case .error(_):
+                    break
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+}
+
+extension PokedexTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard let backpackController = viewController as? BackpackViewController else { return }
+        backpackController.viewModel.recoveryBackPack()
     }
     
 }
