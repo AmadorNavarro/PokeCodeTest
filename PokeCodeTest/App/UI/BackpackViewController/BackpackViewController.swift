@@ -54,7 +54,10 @@ extension BackpackViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("pokemon seleccionado \(viewModel.backpack.value[indexPath.item])")
+        let pokemon = viewModel.backpack.value[indexPath.item]
+        let detailViewController = PokemonDetailViewController()
+        detailViewController.viewModel.setup(pokemon: pokemon)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
 }
