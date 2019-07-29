@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3D154D6722EF438B006A3F17 /* RequestPokemonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D6522EF438B006A3F17 /* RequestPokemonUseCase.swift */; };
 		3D154D6822EF438B006A3F17 /* RequestPokemonUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D6622EF438B006A3F17 /* RequestPokemonUseCaseImpl.swift */; };
+		3D154D7322EF4B89006A3F17 /* BackpackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7022EF4B89006A3F17 /* BackpackViewController.swift */; };
+		3D154D7422EF4B89006A3F17 /* BackpackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7122EF4B89006A3F17 /* BackpackViewModel.swift */; };
+		3D154D7522EF4B89006A3F17 /* BackpackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D154D7222EF4B89006A3F17 /* BackpackViewController.xib */; };
+		3D154D7A22EF5168006A3F17 /* BackpackPokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7722EF5168006A3F17 /* BackpackPokemonCell.swift */; };
+		3D154D7B22EF5168006A3F17 /* BackpackPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7822EF5168006A3F17 /* BackpackPokemonViewModel.swift */; };
+		3D154D8022EF65A0006A3F17 /* BackpackPokemonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D154D7F22EF65A0006A3F17 /* BackpackPokemonCell.xib */; };
 		3D3CF77B22EDB97E00591A40 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77922EDB97E00591A40 /* CoreDataError.swift */; };
 		3D3CF77C22EDB97E00591A40 /* DATAStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77A22EDB97E00591A40 /* DATAStack.swift */; };
 		3D3CF78022EDBABA00591A40 /* PokeCodeTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77E22EDBABA00591A40 /* PokeCodeTest.xcdatamodeld */; };
@@ -31,6 +37,7 @@
 		3D45043922ECA9DB0000F1BA /* SearchPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043622ECA9DB0000F1BA /* SearchPokemonViewController.swift */; };
 		3D45043A22ECA9DB0000F1BA /* SearchPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45043722ECA9DB0000F1BA /* SearchPokemonViewModel.swift */; };
 		3D45043B22ECA9DB0000F1BA /* SearchPokemonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D45043822ECA9DB0000F1BA /* SearchPokemonViewController.xib */; };
+		3D5A4F5122EF4CB900ED6AA1 /* BackpackCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5A4F5022EF4CB900ED6AA1 /* BackpackCollectionDataSource.swift */; };
 		3D6CB45422EA38D50039A140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CB45322EA38D50039A140 /* AppDelegate.swift */; };
 		3D6CB45B22EA38D60039A140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CB45A22EA38D60039A140 /* Assets.xcassets */; };
 		3D6CB45E22EA38D60039A140 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6CB45C22EA38D60039A140 /* LaunchScreen.storyboard */; };
@@ -133,6 +140,12 @@
 /* Begin PBXFileReference section */
 		3D154D6522EF438B006A3F17 /* RequestPokemonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPokemonUseCase.swift; sourceTree = "<group>"; };
 		3D154D6622EF438B006A3F17 /* RequestPokemonUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPokemonUseCaseImpl.swift; sourceTree = "<group>"; };
+		3D154D7022EF4B89006A3F17 /* BackpackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackViewController.swift; sourceTree = "<group>"; };
+		3D154D7122EF4B89006A3F17 /* BackpackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackViewModel.swift; sourceTree = "<group>"; };
+		3D154D7222EF4B89006A3F17 /* BackpackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackpackViewController.xib; sourceTree = "<group>"; };
+		3D154D7722EF5168006A3F17 /* BackpackPokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackPokemonCell.swift; sourceTree = "<group>"; };
+		3D154D7822EF5168006A3F17 /* BackpackPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackPokemonViewModel.swift; sourceTree = "<group>"; };
+		3D154D7F22EF65A0006A3F17 /* BackpackPokemonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackpackPokemonCell.xib; sourceTree = "<group>"; };
 		3D3CF77922EDB97E00591A40 /* CoreDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		3D3CF77A22EDB97E00591A40 /* DATAStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATAStack.swift; sourceTree = "<group>"; };
 		3D3CF77F22EDBABA00591A40 /* PokeCodeTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokeCodeTest.xcdatamodel; sourceTree = "<group>"; };
@@ -155,6 +168,7 @@
 		3D45043622ECA9DB0000F1BA /* SearchPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonViewController.swift; sourceTree = "<group>"; };
 		3D45043722ECA9DB0000F1BA /* SearchPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPokemonViewModel.swift; sourceTree = "<group>"; };
 		3D45043822ECA9DB0000F1BA /* SearchPokemonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPokemonViewController.xib; sourceTree = "<group>"; };
+		3D5A4F5022EF4CB900ED6AA1 /* BackpackCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackCollectionDataSource.swift; sourceTree = "<group>"; };
 		3D6CB45022EA38D50039A140 /* PokeCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6CB45322EA38D50039A140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D6CB45A22EA38D60039A140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +297,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3D154D6922EF4B4A006A3F17 /* BackpackViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D154D7622EF5129006A3F17 /* Backpack Pokemon Cell */,
+				3D154D7022EF4B89006A3F17 /* BackpackViewController.swift */,
+				3D154D7122EF4B89006A3F17 /* BackpackViewModel.swift */,
+				3D154D7222EF4B89006A3F17 /* BackpackViewController.xib */,
+				3D5A4F5022EF4CB900ED6AA1 /* BackpackCollectionDataSource.swift */,
+			);
+			path = BackpackViewController;
+			sourceTree = "<group>";
+		};
+		3D154D7622EF5129006A3F17 /* Backpack Pokemon Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3D154D7722EF5168006A3F17 /* BackpackPokemonCell.swift */,
+				3D154D7822EF5168006A3F17 /* BackpackPokemonViewModel.swift */,
+				3D154D7F22EF65A0006A3F17 /* BackpackPokemonCell.xib */,
+			);
+			path = "Backpack Pokemon Cell";
+			sourceTree = "<group>";
+		};
 		3D3CF77722EDB91400591A40 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +414,6 @@
 		3D6CB45222EA38D50039A140 /* PokeCodeTest */ = {
 			isa = PBXGroup;
 			children = (
-				3D6CB45322EA38D50039A140 /* AppDelegate.swift */,
 				3D6CB47422EA3A080039A140 /* App */,
 				3D6CB47522EA3A0F0039A140 /* Domain */,
 				3D6CB47622EA3A150039A140 /* Data */,
@@ -414,6 +449,7 @@
 		3D6CB47422EA3A080039A140 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3D6CB45322EA38D50039A140 /* AppDelegate.swift */,
 				3DE3193C22EB6288006A0CB1 /* UI */,
 				3DE3197122EB710C006A0CB1 /* Model */,
 				3D6CB47722EA3A260039A140 /* Supporting Files */,
@@ -583,9 +619,10 @@
 		3DE3193C22EB6288006A0CB1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3D45043522ECA9AF0000F1BA /* Search Pokemon */,
+				3D154D6922EF4B4A006A3F17 /* BackpackViewController */,
 				3D45043222ECA74D0000F1BA /* Pokemon Tab Bar */,
 				3DE3193D22EB6292006A0CB1 /* ReusableViews */,
+				3D45043522ECA9AF0000F1BA /* Search Pokemon */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -836,6 +873,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D154D8022EF65A0006A3F17 /* BackpackPokemonCell.xib in Resources */,
 				3D6CB45E22EA38D60039A140 /* LaunchScreen.storyboard in Resources */,
 				3D6CB45B22EA38D60039A140 /* Assets.xcassets in Resources */,
 				3D6CB4B922EA3B210039A140 /* Roboto-Bold.ttf in Resources */,
@@ -846,6 +884,7 @@
 				3D6CB4B622EA3B210039A140 /* Roboto-LightItalic.ttf in Resources */,
 				3D6CB4B822EA3B210039A140 /* Roboto-BlackItalic.ttf in Resources */,
 				3DE3194222EB62B8006A0CB1 /* UpperBannerView.xib in Resources */,
+				3D154D7522EF4B89006A3F17 /* BackpackViewController.xib in Resources */,
 				3D6CB4B122EA3B210039A140 /* Roboto-Light.ttf in Resources */,
 				3D6CB4B722EA3B210039A140 /* Roboto-Italic.ttf in Resources */,
 				3D6CB4B322EA3B210039A140 /* Roboto-MediumItalic.ttf in Resources */,
@@ -1013,6 +1052,7 @@
 				3D6CB4DB22EA3B210039A140 /* Translator.swift in Sources */,
 				3DE3199522EE53EB006A0CB1 /* RecoveryBackpackPokemonsUseCase.swift in Sources */,
 				3D3CF78022EDBABA00591A40 /* PokeCodeTest.xcdatamodeld in Sources */,
+				3D154D7322EF4B89006A3F17 /* BackpackViewController.swift in Sources */,
 				3D6CB4BC22EA3B210039A140 /* BaseWireframe.swift in Sources */,
 				3D6CB4DA22EA3B210039A140 /* Date+Utils.swift in Sources */,
 				3D3CF7A422EE09D800591A40 /* PokemonDataRepositoryImpl.swift in Sources */,
@@ -1029,6 +1069,7 @@
 				3DE3199122EB8518006A0CB1 /* SearchPokemonUseCase.swift in Sources */,
 				3D6CB4CA22EA3B210039A140 /* Error+Utils.swift in Sources */,
 				3D6CB4C722EA3B210039A140 /* String+Localized.swift in Sources */,
+				3D154D7422EF4B89006A3F17 /* BackpackViewModel.swift in Sources */,
 				3DE3198E22EB84D4006A0CB1 /* BaseUseCaseImpl.swift in Sources */,
 				3DE3194A22EB634A006A0CB1 /* BackgroundView.swift in Sources */,
 				3D3CF7A122EE095D00591A40 /* AddPokemonToBackpackUseCaseImpl.swift in Sources */,
@@ -1039,6 +1080,7 @@
 				3D6CB4D022EA3B210039A140 /* UILabel+Utilities.swift in Sources */,
 				3D6CB4CF22EA3B210039A140 /* Array+Utils.swift in Sources */,
 				3DE3195822EB6D83006A0CB1 /* NetworkProxy.swift in Sources */,
+				3D5A4F5122EF4CB900ED6AA1 /* BackpackCollectionDataSource.swift in Sources */,
 				3D6CB4D722EA3B210039A140 /* UIView+utilities.swift in Sources */,
 				3D6CB4C822EA3B210039A140 /* UIImageView+Maps.swift in Sources */,
 				3D6CB4E322EA3EC70039A140 /* NetworkError.swift in Sources */,
@@ -1055,6 +1097,7 @@
 				3DE3195322EB6C37006A0CB1 /* NetworkHeadersAdapter.swift in Sources */,
 				3D6CB4C922EA3B210039A140 /* UITableViewCell+Reusable.swift .swift in Sources */,
 				3D3CF78622EDF2A100591A40 /* _PokemonData.swift in Sources */,
+				3D154D7A22EF5168006A3F17 /* BackpackPokemonCell.swift in Sources */,
 				3D6CB4C622EA3B210039A140 /* RxSwift+Utils.swift in Sources */,
 				3D3CF7AB22EE0AF400591A40 /* PokeCoreDataGateway.swift in Sources */,
 				3D45043122EC99C10000F1BA /* JSONDecoder + Utils.swift in Sources */,
@@ -1081,6 +1124,7 @@
 				3DE3197B22EB72C3006A0CB1 /* PokemonTypeModelDataMapper.swift in Sources */,
 				3D6CB4AF22EA3B210039A140 /* JSONLogger.swift in Sources */,
 				3DE3198022EB7CFB006A0CB1 /* BaseModelDataMapper.swift in Sources */,
+				3D154D7B22EF5168006A3F17 /* BackpackPokemonViewModel.swift in Sources */,
 				3DE3194322EB62B8006A0CB1 /* UpperBannerView.swift in Sources */,
 				3D6CB4BF22EA3B210039A140 /* BaseViewModel.swift in Sources */,
 				3D3CF77B22EDB97E00591A40 /* CoreDataError.swift in Sources */,
