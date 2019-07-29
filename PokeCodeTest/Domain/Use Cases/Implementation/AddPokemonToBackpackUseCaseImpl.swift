@@ -9,14 +9,14 @@
 import Foundation
 import RxSwift
 
-final class AddPokemonToBackpackUseCaseImpl: BaseUseCaseImpl<<#repository#>>, AddPokemonToBackpackUseCase {
+final class AddPokemonToBackpackUseCaseImpl: BaseUseCaseImpl<PokemonDataRepository>, AddPokemonToBackpackUseCase {
     
     init() {
-        super.init(repository: <#repository#>Impl())
+        super.init(repository: PokemonDataRepositoryImpl())
     }
     
-    func execute() -> Completable {
-        return repository.<#method#>
+    func execute(pokemon: Pokemon) -> Completable {
+        return repository.addPokemonToBackpack(pokemon: pokemon)
     }
     
 }

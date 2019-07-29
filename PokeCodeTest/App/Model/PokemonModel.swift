@@ -10,6 +10,7 @@ import UIKit
 
 struct PokemonModel {
     
+    var id = 0
     var name = ""
     var spritePath = ""
     var weight = ""

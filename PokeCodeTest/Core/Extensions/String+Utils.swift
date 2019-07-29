@@ -12,7 +12,7 @@ extension String {
     
     func dateStringToTime() -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.dateFormat
+        dateFormatter.dateFormat = Constants.dateAndTimeFormat
         return dateFormatter.date(from: self) ?? Date()
     }
     

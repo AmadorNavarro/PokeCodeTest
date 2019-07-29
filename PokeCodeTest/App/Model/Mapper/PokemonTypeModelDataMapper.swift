@@ -11,15 +11,19 @@ import Foundation
 final class PokemonTypeModelDataMapper: BaseModelDataMapper<PokemonTypeModel, PokemonType>, BaseDataMapper {
 
     func transform(entity: PokemonType?) -> PokemonTypeModel {
-        var domain = PokemonTypeModel()
-        if let entity = entity {
-            domain.name = entity.name
+        var model = PokemonTypeModel()
+        if let domain = entity {
+            model.name = domain.name
         }
-        return domain
+        return model
     }
     
     func inverseTransform(domain: PokemonTypeModel?) -> PokemonType {
-        return PokemonType()
+        var entity = PokemonType()
+        if let model = domain {
+            entity.name = model.name
+        }
+        return entity
     }
     
 }

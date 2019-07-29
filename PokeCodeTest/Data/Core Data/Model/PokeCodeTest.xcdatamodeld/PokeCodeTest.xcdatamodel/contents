@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18G48f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="PokemonData" representedClassName="PokemonData" syncable="YES">
         <attribute name="baseExperience" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="catchDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +15,7 @@
         <relationship name="pokemonData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PokemonData" inverseName="pokemonTypesData" inverseEntity="PokemonData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PokemonData" positionX="-291.8515625" positionY="47.94921875" width="128" height="148"/>
+        <element name="PokemonData" positionX="-291.8515625" positionY="47.94921875" width="128" height="165"/>
         <element name="PokemonTypeData" positionX="-54" positionY="36" width="128" height="73"/>
     </elements>
 </model>

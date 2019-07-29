@@ -1,6 +1,6 @@
 /*
  * MOGENERATOR command
- * mogenerator -m PokeCodeTest/Data/Core\ Data/Model/PokeCodeTest.xcdatamodeld --human-dir PokeCodeTest/Data/Core\ Data/Model --machine-dir PokeCodeTest/Data/Core\ Data/Model/Machine\ Files --swift --template-var arc=true
+ * mogenerator -m PokeCodeTest/Data/Core\ Data/Model/PokeCodeTest.xcdatamodeld --human-dir PokeCodeTest/Data/Entities --machine-dir PokeCodeTest/Data/Core\ Data/Model/Machine\ Files --swift --template-var arc=true
  */
 
 import Foundation

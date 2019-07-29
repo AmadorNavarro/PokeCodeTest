@@ -11,10 +11,14 @@ import RxSwift
 
 final class PokemonDataRepositoryImpl: PokemonDataRepository {
     
-    private var gateway = AppServiceGateway.shared
+    private var gateway = PokeCoreDataServiceGateway.shared
     
-    func recovery() -> Completable {
-        return restAPI.<#method#>
+    func addPokemonToBackpack(pokemon: Pokemon) -> Completable {
+        return gateway.addPokemon(pokemon: pokemon)
+    }
+    
+    func recoveryBackPackPokemons() -> Single<[Pokemon]> {
+        return gateway.recoveryBackpackPokemons().map { PokemonCoreDataMapper().transform(entityList: $0) }
     }
     
 }

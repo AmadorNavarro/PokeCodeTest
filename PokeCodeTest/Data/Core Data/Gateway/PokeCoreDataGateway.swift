@@ -11,7 +11,7 @@ import RxSwift
 
 protocol PokeCoreDataGateway {
     
-    func addPokemon(pokemon: PokemonEntity) -> Completable
+    func addPokemon(pokemon: Pokemon) -> Completable
     
     func recoveryBackpackPokemons() -> Single<[PokemonData]>
     
