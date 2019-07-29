@@ -11,7 +11,7 @@ import Foundation
 struct PokemonEntity: Codable {
     
     enum CodingKeys: CodingKey {
-        case id, name, sprites, weight, height, baseExperience, types
+        case id, name, sprites, weight, height, baseExperience, types, order
     }
     
     enum SpritesKeys: CodingKey {
@@ -24,6 +24,7 @@ struct PokemonEntity: Codable {
     var weight: Int?
     var height: Int?
     var baseExperience: Int?
+    var order: Int?
     var types: [PokemonTypeEntity]?
     
     init() {}
@@ -35,6 +36,7 @@ struct PokemonEntity: Codable {
         weight = try container.decode(Int.self, forKey: .weight)
         height = try container.decode(Int.self, forKey: .height)
         baseExperience = try container.decode(Int.self, forKey: .baseExperience)
+        order = try container.decode(Int.self, forKey: .order)
         types = try container.decode([PokemonTypeEntity].self, forKey: .types)
         
         let spritesContainer = try container.nestedContainer(keyedBy: SpritesKeys.self, forKey: .sprites)

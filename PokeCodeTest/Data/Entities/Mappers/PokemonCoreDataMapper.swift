@@ -22,6 +22,7 @@ final class PokemonCoreDataMapper: BaseCoreDataMapper<Pokemon, PokemonData>, Bas
             domain.baseExperience = Int(entity.baseExperience)
             domain.types = PokemonTypeCoreDataMapper().transform(entityList: entity.types())
             domain.catchDate = entity.catchDate ?? Date()
+            domain.order = Int(entity.order)
         }
         return domain
     }

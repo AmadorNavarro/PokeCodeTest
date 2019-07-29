@@ -18,5 +18,6 @@ struct Pokemon {
     var baseExperience = 0
     var types: [PokemonType] = []
     var catchDate = Date()
+    var order = 0
     
 }

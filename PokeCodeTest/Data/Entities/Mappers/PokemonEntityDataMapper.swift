@@ -33,6 +33,9 @@ final class PokemonEntityDataMapper: BaseEntityDataMapper<Pokemon, PokemonEntity
         if let types = entity?.types {
             domain.types = PokemonTypeEntityDataMapper().transform(entityList: types)
         }
+        if let order = entity?.order {
+            domain.order = order
+        }
         return domain
     }
     

@@ -8,25 +8,30 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
+import Action
 
 final class SearchPokemonViewModel: BaseViewModel {
     
     let searchPokemonUseCase = SearchPokemonUseCaseImpl()
     let addPokemonUseCase = AddPokemonToBackpackUseCaseImpl()
-    let recoveryBackpack = RecoveryBackpackPokemonsUseCaseImpl()
+    let requestPokemonUseCase = RequestPokemonUseCaseImpl()
     var imagePath = BehaviorSubject(value: "")
     var name = BehaviorSubject(value: "")
     var weight = BehaviorSubject(value: "")
     var height = BehaviorSubject(value: "")
     var existInBackpack = BehaviorSubject(value: false)
-    var pokemon: PokemonModel? = nil
+    var pokemon = BehaviorRelay<PokemonModel?>(value: nil)
+    let addBackpack = CocoaAction { return .empty() }
     
     func setup(pokemon: PokemonModel, existInBackpack: Bool = false) {
-        self.pokemon = pokemon
+        self.pokemon.accept(pokemon)
         name.onNext(pokemon.name)
         imagePath.onNext(pokemon.spritePath)
-        weight.onNext(pokemon.weight)
-        height.onNext(pokemon.height)
+        let weight = String(Double(pokemon.weight) / 10) + "Kg."    // The pokemon weight are in hectograms.
+        self.weight.onNext(weight)
+        let height = String(Double(pokemon.height) / 10) + "m."     // The pokemon height are in decimeters.
+        self.height.onNext(height)
         self.existInBackpack.onNext(existInBackpack)
     }
     
@@ -38,7 +43,7 @@ final class SearchPokemonViewModel: BaseViewModel {
             .subscribe { [weak self] event in
                 switch event {
                 case .success(let response):
-                    self?.setup(pokemon: PokemonModelDataMapper().transform(entity: response), existInBackpack: false)
+                    self?.requestPokemon(PokemonModelDataMapper().transform(entity: response))
                 case .error(let error):
                     self?.actionError.execute(error.apiError())
                 }
@@ -47,34 +52,45 @@ final class SearchPokemonViewModel: BaseViewModel {
     }
     
     func catchCurrentPokemon() {
-        guard let pokemon = pokemon else { return }
+        guard let pokemon = pokemon.value else { return }
         _ = addPokemonUseCase.execute(pokemon: PokemonModelDataMapper().inverseTransform(domain: pokemon))
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
                 switch event {
                 case .completed:
-                    self.retrievePokemonsBackPack()
+                    self?.clearPokemon()
+                    self?.addBackpack.execute()
                 case .error(let error):
-                    self.actionError.execute(error.apiError())
+                    self?.actionError.execute(error.apiError())
                 }
             }.disposed(by: disposeBag)
     }
     
-    func retrievePokemonsBackPack() {
-        _ = recoveryBackpack.execute()
+    func requestPokemon(_ pokemon: PokemonModel) {
+        _ = requestPokemonUseCase.execute(pokemonID: pokemon.id)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
-            .subscribe { event in
+            .subscribe { [weak self] event in
+                var isInBackpack = false
                 switch event {
-                case .success(let response):
-                    print(response)
-                    self.requestNewPokemon()
-                case .error(let error):
-                    self.actionError.execute(error.apiError())
+                case .success(_):
+                    isInBackpack = true
+                    self?.actionError.execute(APINetworkError(code: 408, message: "PokeCodeTest_pokemon_exist_in_backpack".localized, raw: ""))
+                case .error(_):
+                    isInBackpack = false
                 }
-                self.showLoadingAction.execute(.gone)
+                self?.setup(pokemon: pokemon, existInBackpack: isInBackpack)
             }.disposed(by: disposeBag)
+    }
+    
+    func clearPokemon() {
+        pokemon.accept(nil)
+        name.onNext("")
+        imagePath.onNext("")
+        weight.onNext("")
+        height.onNext("")
+        self.existInBackpack.onNext(false)
     }
     
 }

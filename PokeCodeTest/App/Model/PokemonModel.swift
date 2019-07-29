@@ -13,10 +13,11 @@ struct PokemonModel {
     var id = 0
     var name = ""
     var spritePath = ""
-    var weight = ""
-    var height = ""
+    var weight = 0
+    var height = 0
     var baseExperience = ""
     var types: [PokemonTypeModel] = []
     var catchDate = ""
+    var order = 0
     
 }

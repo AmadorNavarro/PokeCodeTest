@@ -22,10 +22,10 @@ extension UIViewController {
     }
     
     func showAlert(error: APINetworkError) {
-        showAlertController(title: error.title, message: error.message, buttonTitle: "Oresult_alert_accept_button".localized, style: .cancel)
+        showAlertController(title: error.title, message: error.message, buttonTitle: "PokeCodeTest_alert_accept_button".localized, style: .cancel)
     }
     
-    func showAlertController(title: String? = "Oresult_alert_information_title".localized, message: String, buttonTitle: String? = "Oresult_alert_accept_button".localized, buttonAction: UIAlertAction? = nil, style: UIAlertAction.Style? = .cancel, secondButton: UIAlertAction? = nil) {
+    func showAlertController(title: String? = "PokeCodeTest_alert_information_title".localized, message: String, buttonTitle: String? = "PokeCodeTest_alert_accept_button".localized, buttonAction: UIAlertAction? = nil, style: UIAlertAction.Style? = .cancel, secondButton: UIAlertAction? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let buttonAction = buttonAction {
             alertController.addAction(buttonAction)

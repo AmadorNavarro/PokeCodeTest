@@ -42,7 +42,7 @@ final class PokeCoreDataServiceGateway: PokeCoreDataGateway {
     func recoveryBackpackPokemons() -> Single<[PokemonData]> {
         let context = model.mainContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: PokemonData.entityName())
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: PokemonDataAttributes.id.rawValue, ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: PokemonDataAttributes.order.rawValue, ascending: true)]
         let results = try? context.fetch(fetchRequest)
                 
         return Observable<[PokemonData]>.create { observer in
