@@ -15,4 +15,6 @@ protocol PokeCoreDataGateway {
     
     func recoveryBackpackPokemons() -> Single<[PokemonData]>
     
+    func request(pokemonID: Int) -> Single<PokemonData>
+    
 }

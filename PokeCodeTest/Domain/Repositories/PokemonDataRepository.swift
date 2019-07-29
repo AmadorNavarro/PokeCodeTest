@@ -14,5 +14,7 @@ protocol PokemonDataRepository {
     func addPokemonToBackpack(pokemon: Pokemon) -> Completable
     
     func recoveryBackPackPokemons() -> Single<[Pokemon]>
+    
+    func requestPokemon(pokemonID: Int) -> Single<Pokemon>
         
 }

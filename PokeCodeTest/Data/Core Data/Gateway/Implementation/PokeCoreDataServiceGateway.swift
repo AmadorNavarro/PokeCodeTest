@@ -19,7 +19,7 @@ final class PokeCoreDataServiceGateway: PokeCoreDataGateway {
     
     func addPokemon(pokemon: Pokemon) -> Completable {
         let context = model.newBackgroundContext()
-        let pokemonData = PokemonData(entity: pokemon, context: context)
+        _ = PokemonData(entity: pokemon, context: context)
         var event = CompletableEvent.completed
         return Completable.create { completable in
             context.performAndWait {
@@ -51,6 +51,23 @@ final class PokeCoreDataServiceGateway: PokeCoreDataGateway {
                 observer.on(.completed)
             } else {
                 observer.on(.error(NSError(domain: "PokeCodeTest", code: 406, userInfo: [NSLocalizedDescriptionKey : "Can't retrieve data"])))
+            }
+            return Disposables.create()
+        }.asSingle()
+    }
+    
+    func request(pokemonID: Int) -> Single<PokemonData> {
+        let context = model.mainContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: PokemonData.entityName())
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [String(pokemonID)])
+        let result = try? context.fetch(fetchRequest) as? [PokemonData]
+        
+        return Observable<PokemonData>.create { observer in
+            if let pokemon = result?.first {
+                observer.on(.next(pokemon))
+                observer.on(.completed)
+            } else {
+                observer.on(.error(NSError(domain: "PokeCodeTest", code: 407, userInfo: [NSLocalizedDescriptionKey : "Pokemon not found"])))
             }
             return Disposables.create()
         }.asSingle()

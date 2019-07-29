@@ -21,4 +21,8 @@ final class PokemonDataRepositoryImpl: PokemonDataRepository {
         return gateway.recoveryBackpackPokemons().map { PokemonCoreDataMapper().transform(entityList: $0) }
     }
     
+    func requestPokemon(pokemonID: Int) -> Single<Pokemon> {
+        return gateway.request(pokemonID: pokemonID).map { PokemonCoreDataMapper().transform(entity: $0) }
+    }
+    
 }
