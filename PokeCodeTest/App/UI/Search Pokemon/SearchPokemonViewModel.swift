@@ -12,6 +12,8 @@ import RxSwift
 final class SearchPokemonViewModel: BaseViewModel {
     
     let searchPokemonUseCase = SearchPokemonUseCaseImpl()
+    let addPokemonUseCase = AddPokemonToBackpackUseCaseImpl()
+    let recoveryBackpack = RecoveryBackpackPokemonsUseCaseImpl()
     var imagePath = BehaviorSubject(value: "")
     var name = BehaviorSubject(value: "")
     var weight = BehaviorSubject(value: "")
@@ -41,6 +43,37 @@ final class SearchPokemonViewModel: BaseViewModel {
                     self?.actionError.execute(error.apiError())
                 }
                 self?.showLoadingAction.execute(.gone)
+            }.disposed(by: disposeBag)
+    }
+    
+    func catchCurrentPokemon() {
+        guard let pokemon = pokemon else { return }
+        _ = addPokemonUseCase.execute(pokemon: PokemonModelDataMapper().inverseTransform(domain: pokemon))
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe { event in
+                switch event {
+                case .completed:
+                    self.retrievePokemonsBackPack()
+                case .error(let error):
+                    self.actionError.execute(error.apiError())
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+    func retrievePokemonsBackPack() {
+        _ = recoveryBackpack.execute()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe { event in
+                switch event {
+                case .success(let response):
+                    print(response)
+                    self.requestNewPokemon()
+                case .error(let error):
+                    self.actionError.execute(error.apiError())
+                }
+                self.showLoadingAction.execute(.gone)
             }.disposed(by: disposeBag)
     }
     

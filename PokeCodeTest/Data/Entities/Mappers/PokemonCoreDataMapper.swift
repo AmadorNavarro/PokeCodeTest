@@ -9,23 +9,24 @@
 import Foundation
 import CoreData
 
-final class PokemonCoreDataMapper: BaseCoreDataMapper<PokemonEntity, PokemonData>, BaseDataMapper {
+final class PokemonCoreDataMapper: BaseCoreDataMapper<Pokemon, PokemonData>, BaseDataMapper {
     
-    func transform(entity: PokemonData?) -> PokemonEntity {
-        var domain = PokemonEntity()
+    func transform(entity: PokemonData?) -> Pokemon {
+        var domain = Pokemon()
         if let entity = entity {
             domain.id = Int(entity.id)
-            domain.name = entity.name
-            domain.spritePath = entity.spritePath
+            domain.name = entity.name ?? ""
+            domain.spritePath = entity.spritePath ?? ""
             domain.weight = Int(entity.weight)
             domain.height = Int(entity.height)
             domain.baseExperience = Int(entity.baseExperience)
             domain.types = PokemonTypeCoreDataMapper().transform(entityList: entity.types())
+            domain.catchDate = entity.catchDate ?? Date()
         }
         return domain
     }
     
-    func inverseTransform(domain: PokemonEntity?) -> PokemonData {
+    func inverseTransform(domain: Pokemon?) -> PokemonData {
         return PokemonData()
     }
     

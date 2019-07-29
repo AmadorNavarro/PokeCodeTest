@@ -54,7 +54,11 @@ final class SearchPokemonViewController: BaseViewController<SearchPokemonViewMod
     }
 
     @IBAction func userCatchThePokemon(_ sender: Any) {
-        viewModel.requestNewPokemon()
+        if viewModel.pokemon != nil {
+            viewModel.catchCurrentPokemon()
+        } else {
+            viewModel.requestNewPokemon()
+        }
     }
     
     @IBAction func userLeaveThePokemon(_ sender: Any) {

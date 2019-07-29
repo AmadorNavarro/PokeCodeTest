@@ -6,6 +6,7 @@ import CoreData
 
 public enum PokemonDataAttributes: String {
     case baseExperience = "baseExperience"
+    case catchDate = "catchDate"
     case height = "height"
     case id = "id"
     case name = "name"
@@ -49,6 +50,9 @@ open class _PokemonData: NSManagedObject {
 
     @NSManaged open
     var baseExperience: Int32 // Optional scalars not supported
+
+    @NSManaged open
+    var catchDate: Date?
 
     @NSManaged open
     var height: Int32 // Optional scalars not supported

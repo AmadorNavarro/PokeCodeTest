@@ -13,10 +13,11 @@ final class PokemonModelDataMapper: BaseModelDataMapper<PokemonModel, Pokemon>, 
     func transform(entity: Pokemon?) -> PokemonModel {
         var domain = PokemonModel()
         if let entity = entity {
+            domain.id = entity.id
             domain.name = entity.name
             domain.spritePath = entity.spritePath
-            domain.weight = String(entity.weight / 10) + "Kg."  // The pokemon weight is received in hectograms
-            domain.height = String(entity.height / 10) + "m."   // The pokemon height is received in decimeters
+            domain.weight = String(entity.weight)
+            domain.height = String(entity.height)
             domain.baseExperience = String(entity.baseExperience)
             domain.types = PokemonTypeModelDataMapper().transform(entityList: entity.types)
             domain.catchDate = entity.catchDate.dateAndTimeToString()
@@ -25,7 +26,18 @@ final class PokemonModelDataMapper: BaseModelDataMapper<PokemonModel, Pokemon>, 
     }
     
     func inverseTransform(domain: PokemonModel?) -> Pokemon {
-        return Pokemon()
+        var entity = Pokemon()
+        if let domain = domain {
+            entity.id = domain.id
+            entity.name = domain.name
+            entity.spritePath = domain.spritePath
+            entity.weight = Int(domain.weight) ?? 0
+            entity.height = Int(domain.height) ?? 0
+            entity.baseExperience = Int(domain.baseExperience) ?? 0
+            entity.types = PokemonTypeModelDataMapper().inverseTransform(domainList: domain.types)
+            entity.catchDate = domain.catchDate.dateStringToTime()
+        }
+        return entity
     }
     
 }
