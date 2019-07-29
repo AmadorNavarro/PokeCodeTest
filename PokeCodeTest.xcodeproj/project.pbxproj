@@ -15,6 +15,7 @@
 		3D154D7A22EF5168006A3F17 /* BackpackPokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7722EF5168006A3F17 /* BackpackPokemonCell.swift */; };
 		3D154D7B22EF5168006A3F17 /* BackpackPokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154D7822EF5168006A3F17 /* BackpackPokemonViewModel.swift */; };
 		3D154D8022EF65A0006A3F17 /* BackpackPokemonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D154D7F22EF65A0006A3F17 /* BackpackPokemonCell.xib */; };
+		3D154D8322EFAB31006A3F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D154D8522EFAB31006A3F17 /* Localizable.strings */; };
 		3D3CF77B22EDB97E00591A40 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77922EDB97E00591A40 /* CoreDataError.swift */; };
 		3D3CF77C22EDB97E00591A40 /* DATAStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77A22EDB97E00591A40 /* DATAStack.swift */; };
 		3D3CF78022EDBABA00591A40 /* PokeCodeTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CF77E22EDBABA00591A40 /* PokeCodeTest.xcdatamodeld */; };
@@ -146,6 +147,8 @@
 		3D154D7722EF5168006A3F17 /* BackpackPokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackPokemonCell.swift; sourceTree = "<group>"; };
 		3D154D7822EF5168006A3F17 /* BackpackPokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackPokemonViewModel.swift; sourceTree = "<group>"; };
 		3D154D7F22EF65A0006A3F17 /* BackpackPokemonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackpackPokemonCell.xib; sourceTree = "<group>"; };
+		3D154D8422EFAB31006A3F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3D154D8622EFAB40006A3F17 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D3CF77922EDB97E00591A40 /* CoreDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		3D3CF77A22EDB97E00591A40 /* DATAStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATAStack.swift; sourceTree = "<group>"; };
 		3D3CF77F22EDBABA00591A40 /* PokeCodeTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokeCodeTest.xcdatamodel; sourceTree = "<group>"; };
@@ -484,6 +487,7 @@
 				3D6CB45A22EA38D60039A140 /* Assets.xcassets */,
 				3D6CB45C22EA38D60039A140 /* LaunchScreen.storyboard */,
 				3D6CB45F22EA38D60039A140 /* Info.plist */,
+				3D154D8522EFAB31006A3F17 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -856,6 +860,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 3D6CB44722EA38D50039A140;
 			productRefGroup = 3D6CB45122EA38D50039A140 /* Products */;
@@ -878,6 +883,7 @@
 				3D6CB45B22EA38D60039A140 /* Assets.xcassets in Resources */,
 				3D6CB4B922EA3B210039A140 /* Roboto-Bold.ttf in Resources */,
 				3D6CB4B522EA3B210039A140 /* Roboto-BoldItalic.ttf in Resources */,
+				3D154D8322EFAB31006A3F17 /* Localizable.strings in Resources */,
 				3D6CB4B222EA3B210039A140 /* Roboto-Regular.ttf in Resources */,
 				3D45043B22ECA9DB0000F1BA /* SearchPokemonViewController.xib in Resources */,
 				3D6CB4B422EA3B210039A140 /* Roboto-ThinItalic.ttf in Resources */,
@@ -1164,6 +1170,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3D154D8522EFAB31006A3F17 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D154D8422EFAB31006A3F17 /* en */,
+				3D154D8622EFAB40006A3F17 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3D6CB45C22EA38D60039A140 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1179,6 +1194,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1240,6 +1256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
