@@ -16,7 +16,7 @@ final class BackpackPokemonViewModel {
     
     func setup(pokemon: PokemonModel) {
         imagePath.onNext(pokemon.spritePath)
-        name.onNext(pokemon.name)
+        name.onNext(pokemon.name.replacingOccurrences(of: "-", with: " "))
     }
     
 }

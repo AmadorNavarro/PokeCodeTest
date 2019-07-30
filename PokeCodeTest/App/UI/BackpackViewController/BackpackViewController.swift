@@ -21,6 +21,13 @@ final class BackpackViewController: BaseViewController<BackpackViewModel> {
         if viewModel.backpack.value.isEmpty {
             viewModel.recoveryBackPack()
         }
+        tabBarItem.title = nil
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
     
     override func createViewModel() -> BackpackViewModel {
