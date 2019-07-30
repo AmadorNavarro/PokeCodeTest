@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  PokeCodeTest
+
+  Created by Amador Navarro on 30/07/2019.
+  Copyright © 2019 AmadorNavarro. All rights reserved.
+*/
+
+// SPINNER
+"PokeCodeTest_spinner_loading_text" = "Loading";
+
+// SEARCH VIEW
+"PokeCodeTest_search_view_catchbutton_search_title" = "Search other";
+"PokeCodeTest_search_view_catchbutton_catch_title" = "Catch it";
+"PokeCodeTest_search_view_leavebutton_title" = "Leave free";
+"PokeCodeTest_search_view_pokemon_not_found" = "No Pokemon near";
+"PokeCodeTest_pokemon_exist_in_backpack" = "You already have this pokemon. Leave free, please.";
+"PokeCodeTest_not_found_error" = "No Pokemon near";
+
+// BACKPACK VIEW
+"PokeCodeTest_backpackController_title" = "Backpack";
+
+// DETAIL VIEW
+"PokeCodeTest_pokemon_detail_view_weight_title" = "Weight:";
+"PokeCodeTest_pokemon_detail_view_height_title" = "Height:";
+"PokeCodeTest_pokemon_detail_view_base_experience_title" = "Base Experience:";
+
+// ERROR MESSAGES
+"PokeCodeTest_error_message_unexcepted_error_message" = "An unexcepted error has occurred. Please try again.";
+"PokeCodeTest_error_message_unexcepted_error_title" = "Atention";
+"PokeCodeTest_reachability_error_message_text" = "Not internet connection. Please check your connection and try again.";
+
+// ALERT MESSAGES
+"PokeCodeTest_alert_accept_button" = "OK";
+"PokeCodeTest_alert_information_title" = "information";

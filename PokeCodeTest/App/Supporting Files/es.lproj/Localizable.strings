@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  PokeCodeTest
+
+  Created by Amador Navarro on 30/07/2019.
+  Copyright © 2019 AmadorNavarro. All rights reserved.
+*/
+
+// SPINNER
+"PokeCodeTest_spinner_loading_text" = "Cargando";
+
+// SEARCH VIEW
+"PokeCodeTest_search_view_catchbutton_search_title" = "Buscar otro";
+"PokeCodeTest_search_view_catchbutton_catch_title" = "Atraparlo";
+"PokeCodeTest_search_view_leavebutton_title" = "Dejar ir";
+"PokeCodeTest_search_view_pokemon_not_found" = "No hay pokemons cerca";
+"PokeCodeTest_pokemon_exist_in_backpack" = "Ya tienes este pokemon, déjalo ir, por favor.";
+"PokeCodeTest_not_found_error" = "No hay pokemons cerca";
+
+// BACKPACK VIEW
+"PokeCodeTest_backpackController_title" = "Mochila";
+
+// DETAIL VIEW
+"PokeCodeTest_pokemon_detail_view_weight_title" = "Peso:";
+"PokeCodeTest_pokemon_detail_view_height_title" = "Altura:";
+"PokeCodeTest_pokemon_detail_view_base_experience_title" = "Experiencia:";
+
+// ERROR MESSAGES
+"PokeCodeTest_error_message_unexcepted_error_message" = "Ha ocurrido un error inesperado, por favor, vuelva a intentarlo.";
+"PokeCodeTest_error_message_unexcepted_error_title" = "Atención";
+"PokeCodeTest_reachability_error_message_text" = "Se ha perdido la conexión a internet. Compruebe su conexión y vuelva a intentarlo";
+
+// ALERT MESSAGES
+"PokeCodeTest_alert_accept_button" = "OK";
+"PokeCodeTest_alert_information_title" = "información";
