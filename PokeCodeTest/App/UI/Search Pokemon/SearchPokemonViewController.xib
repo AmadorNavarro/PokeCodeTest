@@ -26,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-v9-8gS" userLabel="Background Image">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-v9-8gS" userLabel="Background Image">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-HH-A2M" userLabel="Buttons Stack">
@@ -113,6 +113,6 @@
         </view>
     </objects>
     <resources>
-        <image name="d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de" width="800" height="480"/>
+        <image name="background" width="800" height="480"/>
     </resources>
 </document>

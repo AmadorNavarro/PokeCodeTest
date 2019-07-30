@@ -57,15 +57,15 @@ final class UpperBannerView: BaseComponentView, BaseComponentDelegate {
 
         viewModel.text.bind(to: textLabel.rx.text).disposed(by: disposeBag)
         viewModel.backgroundColor.asObservable().bind { [weak self] color in
-            guard let `self` = self else { return }
-            self.view.backgroundColor = color
+            self?.view.backgroundColor = color
             }.disposed(by: disposeBag)
         
-        viewModel.style.asObservable().bind { [weak self] style in
-            guard let `self` = self else { return }
-            if let style = style.style() as? LabelStylized {
-                self.textLabel.setup(withStyle: style)
-            }
+        viewModel.font.asObservable().bind { [weak self] font in
+            self?.textLabel.font = font
+            }.disposed(by: disposeBag)
+        
+        viewModel.textColor.asObservable().bind { [weak self] color in
+            self?.textLabel.textColor = color
             }.disposed(by: disposeBag)
     }
     
@@ -134,15 +134,10 @@ final class UpperBannerView: BaseComponentView, BaseComponentDelegate {
 extension UpperBannerView: UIDynamicAnimatorDelegate {
     
     func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
-        timer = Timer.scheduledTimer(withTimeInterval: 7.0, repeats: false, block: { [weak self] time in
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { [weak self] time in
             self?.animator?.removeAllBehaviors()
             self?.impulseBannerView()
         })
-        timer?.fire()
-    }
-    
-    func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
-        print("animatorWillResume")
     }
     
 }

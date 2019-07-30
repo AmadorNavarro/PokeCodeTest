@@ -35,6 +35,7 @@ final class SearchPokemonViewController: BaseViewController<SearchPokemonViewMod
         super.setupRx()
         
         viewModel.name.bind(to: nameLabel.rx.text).disposed(by: disposeBag)
+        viewModel.leaveButtonTitle.bind(to: leaveButton.rx.title(for: .normal)).disposed(by: disposeBag)
         viewModel.weight.bind(to: weightLabel.rx.text).disposed(by: disposeBag)
         viewModel.height.bind(to: heightLabel.rx.text).disposed(by: disposeBag)
         

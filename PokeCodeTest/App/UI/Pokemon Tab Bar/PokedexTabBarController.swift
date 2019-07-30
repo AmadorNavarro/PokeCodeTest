@@ -33,6 +33,7 @@ final class PokedexTabBarController: UITabBarController {
     }
     
     func configure() {
+        delegate = self
         tabBar.isTranslucent = false
         
         addSearchPokemonItem()
@@ -41,7 +42,7 @@ final class PokedexTabBarController: UITabBarController {
     
     func addSearchPokemonItem() {
         let searchPokemon = SearchPokemonViewController()
-        searchPokemon.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        searchPokemon.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "SearchIcon"), tag: 0)
         
         viewControllers = [searchPokemon]
     }
@@ -49,7 +50,7 @@ final class PokedexTabBarController: UITabBarController {
     func addBackpackItem() {
         if tabBar.items?.count == 1 {
             let backpackViewController = BackpackViewController()
-            backpackViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+            backpackViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "backpack"), tag: 1)
             
             let navigationController = UINavigationController(rootViewController: backpackViewController)
             navigationController.navigationBar.isTranslucent = true
@@ -81,8 +82,8 @@ final class PokedexTabBarController: UITabBarController {
 extension PokedexTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        guard let backpackController = viewController as? BackpackViewController else { return }
-        backpackController.viewModel.recoveryBackPack()
+        guard let nav = viewController as? UINavigationController, let backpack = nav.topViewController as? BackpackViewController else { return }
+        backpack.viewModel.recoveryBackPack()
     }
     
 }

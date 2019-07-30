@@ -12,6 +12,7 @@
 // SEARCH VIEW
 "PokeCodeTest_search_view_catchbutton_search_title" = "Buscar otro";
 "PokeCodeTest_search_view_catchbutton_catch_title" = "Atraparlo";
+"PokeCodeTest_search_view_leavebutton_title" = "Dejar ir";
 "PokeCodeTest_search_view_pokemon_not_found" = "No hay pokemons cerca";
 "PokeCodeTest_pokemon_exist_in_backpack" = "Ya tienes este pokemon, déjalo ir, por favor.";
 "PokeCodeTest_not_found_error" = "No hay pokemons cerca";
