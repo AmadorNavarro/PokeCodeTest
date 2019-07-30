@@ -33,6 +33,7 @@ final class PokedexTabBarController: UITabBarController {
     }
     
     func configure() {
+        delegate = self
         tabBar.isTranslucent = false
         
         addSearchPokemonItem()
@@ -81,8 +82,8 @@ final class PokedexTabBarController: UITabBarController {
 extension PokedexTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        guard let backpackController = viewController as? BackpackViewController else { return }
-        backpackController.viewModel.recoveryBackPack()
+        guard let nav = viewController as? UINavigationController, let backpack = nav.topViewController as? BackpackViewController else { return }
+        backpack.viewModel.recoveryBackPack()
     }
     
 }

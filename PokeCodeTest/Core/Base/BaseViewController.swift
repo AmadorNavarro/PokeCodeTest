@@ -214,19 +214,18 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, BaseViewControlle
     }
     
     private func addLostConnectionMessage() {
-        guard let navigation = navigationController?.view else { return }
         let bannerView = lostConnectionBannerView()
-        navigation.addSubview(bannerView)
+        view.addSubview(bannerView)
     }
     
     private func lostConnectionBannerView() -> UpperBannerView {
         if let bannerView = self.bannerView {
             return bannerView
         } else {
-            let barHeight = navigationController?.navigationBar.frame.maxY ?? 0
+            let barHeight = navigationController?.navigationBar.frame.maxY ?? 100.0
             let frame = CGRect(x: 0, y: -UpperBannerView.preferredHeight, width: UIScreen.main.bounds.width, height: UpperBannerView.preferredHeight + barHeight)
             let bannerView = UpperBannerView(frame: frame)
-            bannerView.viewModel.setUp(text: "PokeCodeTest_reachability_error_message_text".localized, textStyle: .textB16White, backgroundColor: .red)
+            bannerView.viewModel.setUp(text: "PokeCodeTest_reachability_error_message_text".localized)
             self.bannerView = bannerView
             return bannerView
         }

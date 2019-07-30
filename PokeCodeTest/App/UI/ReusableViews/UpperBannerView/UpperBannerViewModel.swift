@@ -12,12 +12,14 @@ import RxSwift
 final class UpperBannerViewModel {
     
     var text = BehaviorSubject(value: "")
-    var style = BehaviorSubject(value: ThemeStyle.textB16)
-    var backgroundColor = BehaviorSubject(value: UIColor.white)
+    var font = BehaviorSubject(value: UIFont())
+    var textColor = BehaviorSubject(value: UIColor.white)
+    var backgroundColor = BehaviorSubject(value: UIColor.red)
     
-    func setUp(text: String, textStyle: ThemeStyle = .textB16, backgroundColor: UIColor = .white) {
+    func setUp(text: String, font: UIFont = UIFont.boldSystemFont(ofSize: 16), textColor: UIColor = .white, backgroundColor: UIColor = .red) {
         self.text.onNext(text)
-        self.style.onNext(textStyle)
+        self.textColor.onNext(textColor)
+        self.font.onNext(font)
         self.backgroundColor.onNext(backgroundColor)
     }
     

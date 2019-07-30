@@ -16,6 +16,7 @@ final class SearchPokemonViewModel: BaseViewModel {
     let searchPokemonUseCase = SearchPokemonUseCaseImpl()
     let addPokemonUseCase = AddPokemonToBackpackUseCaseImpl()
     let requestPokemonUseCase = RequestPokemonUseCaseImpl()
+    var leaveButtonTitle = BehaviorSubject(value: "PokeCodeTest_search_view_leavebutton_title".localized)
     var imagePath = BehaviorSubject(value: "")
     var name = BehaviorSubject(value: "")
     var weight = BehaviorSubject(value: "")
@@ -36,11 +37,18 @@ final class SearchPokemonViewModel: BaseViewModel {
     }
     
     func requestNewPokemon() {
+        guard state != .loading else { return }
+        guard reachability != .notReachable else {
+            notInternetConnection.execute()
+            return
+        }
+        state = .loading
         showLoadingAction.execute(.visible)
         _ = searchPokemonUseCase.execute()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe { [weak self] event in
+                self?.state = .loaded
                 switch event {
                 case .success(let response):
                     self?.requestPokemon(PokemonModelDataMapper().transform(entity: response))
